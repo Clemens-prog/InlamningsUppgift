@@ -1,4 +1,4 @@
-package InlämningsUppgift.test.heltTextPaEnRad_v3_61;
+package InlämningsUppgift.test.flyttTillLogikv3_63;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -8,9 +8,9 @@ import java.util.Scanner;
 //Klassen skapar ett objekt av logik klassen sen ger den instruktion till användaren att skriva in rader text och
 //avsluta med ordet stop på en rad.
 //Hela texten skrivs ut samt antal rader, ord och tecken, samt det längsta ordet
-public class LaserInTextSkriverUtResultatMain_v3_61 {
+public class LaserInTextSkriverUtResultatMain_v3_63 {
     static void main(String[] args) {
-        RaknarRaderOchHarKollPaAntaletTeckenStop_v3_61 raknarObj = new RaknarRaderOchHarKollPaAntaletTeckenStop_v3_61();
+        RaknarRaderOchHarKollPaAntaletTeckenStop_v3_63 raknarObj = new RaknarRaderOchHarKollPaAntaletTeckenStop_v3_63();
         System.out.println("Skriv in rader avsluta med stop");
         Scanner scan = new Scanner(System.in);
         String rad = "";
@@ -24,47 +24,32 @@ public class LaserInTextSkriverUtResultatMain_v3_61 {
             rad = scan.nextLine();
         }
         //Ta ut längden av det längsta ordet wordLength
-        //String[] lines = helatexten.split(System.getProperty("line.separator"));
-        String[] words = null;
+       int wordLength = raknarObj.taUtLängdenAvDetLängstaOrdet (helatextenEnRad);
+        /**String[] words = null;
         int wordLength = 0;
-        // for(int i = 0; i < lines.length; i++)
-      //  {
            words = helatextenEnRad.split(" ");
-            //System.out.println("Words " + Arrays.toString(words));
             for(int j = 0; j < words.length; j++)
             {
-              //  System.out.println("words[j] " + words[j]);
                 if(wordLength < words[j].trim().length())
                 {
                     wordLength = words[j].trim().length();
-                    //System.out.println("if words[j] " + words[j]);
                 }
+            }*/
 
-            }
-       // }
-
-        //System.out.println("Längsta ordet " + wordLength);
         //Räkna hur många ord det är
-
-        //String[] lines = helatexten.split(System.getProperty("line.separator"));
-        //String[] words = null;
-        //int wordLength = 0;
-        int hurMångaLängstaOrd = 0;
-        //for(int i = 0; i < lines.length; i++)
-        //{
+        String[] längstaOrden = raknarObj.räknaHurMångaOrdDetÄr(helatextenEnRad,wordLength);
+       /** int hurMångaLängstaOrd = 0;
+        String[] words = null;
             words = helatextenEnRad.split(" ");
             for(int j = 0; j < words.length; j++)
             {
                 if(wordLength == words[j].trim().length())
                     hurMångaLängstaOrd++;
             }
-        //}
 
         String[] längstaOrd = new String[hurMångaLängstaOrd];
         //Ta ut alla ord som har den längden och
         int k = 0;
-        //for(int i = 0; i < lines.length; i++)
-        //{
             words = helatextenEnRad.split(" ");
             for(int j = 0; j < words.length; j++)
             {
@@ -73,15 +58,12 @@ public class LaserInTextSkriverUtResultatMain_v3_61 {
                     längstaOrd[k] = words[j];
                     k++;
                 }
-
-            }
-        //}
-
+            }*/
 
         System.out.println("Det här är hela texten: " + helatexten);
         System.out.println("Antal rader " + raknarObj.getAntalRader() + "\n" +
                             "Antal ord " + raknarObj.getAntalOrd() + "\n" +
-                            "Langsta orden " + Arrays.toString(längstaOrd) + "\n" +
+                            "Langsta orden " + Arrays.toString(längstaOrden) + "\n" +
                            "antal tecken " + raknarObj.getAntalTecken());
     }
 }
