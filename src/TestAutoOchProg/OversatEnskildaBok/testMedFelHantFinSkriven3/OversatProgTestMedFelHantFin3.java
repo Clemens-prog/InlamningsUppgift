@@ -1,22 +1,15 @@
-package TestAutoOchProg.OversatEnskildaBok.testMedFelHantFinSkriven2;
+package TestAutoOchProg.OversatEnskildaBok.testMedFelHantFinSkriven3;
 
 import java.util.Scanner;
 
-public class OversatProgTestMedFelHantFin2 {
+public class OversatProgTestMedFelHantFin3 {
     static void main(String[] args) {
-        OversattareTestMedFelHantFin2 oversattare = new OversattareTestMedFelHantFin2();
+        OversattareTestMedFelHantFin3 oversattare = new OversattareTestMedFelHantFin3();
         Scanner scan = new Scanner(System.in);
         System.out.println("Skriv in ett ord:");
         String ordIn = scan.nextLine();
-        String mor = oversattare.ordBokTilMor(ordIn);
-        //Kontrollera att det översatta ordet blir morsekod
-        //dvs att det ursprungliga bokstäverna är A-Z
-        while(!(mor.contains(".") || mor.contains("_")))
-        {
-            System.out.println("Skriv om ordet med stora bokstäver A - Z");
-            ordIn = scan.nextLine();
-            mor = oversattare.ordBokTilMor(ordIn);
-        }
+        String mor = oversattare.ordBokTilMorCheck(ordIn);
+
 
         System.out.println("Den inskrivna ordets morseskod " + mor);
 

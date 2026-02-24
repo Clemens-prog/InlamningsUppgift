@@ -1,25 +1,22 @@
-package TestAutoOchProg.OversatEnskildaBok.testMedFelHantFinSkriven2;
+package TestAutoOchProg.OversatEnskildaBok.testMedFelHantFinSkriven3_1;
 
 import java.util.Scanner;
 
-public class OversatProgTestMedFelHantFin2 {
+public class OversatProgTestMedFelHantFin3_1 {
     static void main(String[] args) {
-        OversattareTestMedFelHantFin2 oversattare = new OversattareTestMedFelHantFin2();
+        OversattareTestMedFelHantFin3_1 oversattare = new OversattareTestMedFelHantFin3_1();
         Scanner scan = new Scanner(System.in);
         System.out.println("Skriv in ett ord:");
         String ordIn = scan.nextLine();
-        String mor = oversattare.ordBokTilMor(ordIn);
-        //Kontrollera att det översatta ordet blir morsekod
-        //dvs att det ursprungliga bokstäverna är A-Z
-        while(!(mor.contains(".") || mor.contains("_")))
-        {
-            System.out.println("Skriv om ordet med stora bokstäver A - Z");
-            ordIn = scan.nextLine();
-            mor = oversattare.ordBokTilMor(ordIn);
-        }
+        String mor = oversattare.ordBokTilMorCheck(ordIn);
+
 
         System.out.println("Den inskrivna ordets morseskod " + mor);
 
+        System.out.println("Skriv in ett morsekodsord:");
+        String morIn = scan.nextLine();
+        String ord = oversattare.ordMorTilbokCheck(morIn);
+        /*
         //Titta så att det översatta ordet från morsekod
         //är A-Z
         String morIn;
@@ -37,7 +34,7 @@ public class OversatProgTestMedFelHantFin2 {
                 if(bokstavAscii < 65 || bokstavAscii > 90)
                     baraStoraBokstaver = false;
             }
-        }
+        }*/
         System.out.println("Den inskrivna morsekodens ordet " + ord);
     }
 }
